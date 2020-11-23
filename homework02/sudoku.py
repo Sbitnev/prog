@@ -151,3 +151,14 @@ def generate_sudoku(N: int) -> tp.List[tp.List[str]]:
             c[y][x] = '.'
             b -= 1
     return c
+
+
+if __name__ == "__main__":
+    for fname in ["puzzle1.txt", "puzzle2.txt", "puzzle3.txt"]:
+        grid = read_sudoku(fname)
+        display(grid)
+        solution = solve(grid)
+        if not solution:
+            print(f"Puzzle {fname} can't be solved")
+        else:
+            display(solution)
